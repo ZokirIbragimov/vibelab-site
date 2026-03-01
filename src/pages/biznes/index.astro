@@ -1,0 +1,35 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = 'Бизнес и стартапы — MVP, проверка идей, запуск проектов | VibeLab';
+const description = 'Как сделать MVP за выходные, проверить бизнес-идею без бюджета, запустить стартап с помощью вайб-кодинга и AI.';
+
+const articles = [
+  { title: '5 способов создать MVP за выходные', url: '/biznes/mvp-za-vyhodnye/', desc: 'От no-code до вайб-кодинга — сравнение и пошаговая инструкция для предпринимателей.' },
+  { title: 'Как проверить бизнес-идею за 48 часов', url: '/biznes/proverit-biznes-ideyu/', desc: 'С помощью вайб-кодинга — без бюджета и программистов. Методология быстрой валидации.' },
+];
+---
+
+<BaseLayout title={title} description={description}>
+  <h1>Бизнес и стартапы</h1>
+  <p class="category-desc">Как сделать MVP, проверить бизнес-идею, запустить проект за выходные — с помощью вайб-кодинга и AI-инструментов. Кейсы, инструкции, практические советы.</p>
+
+  <div class="articles-list">
+    {articles.map(a => (
+      <a href={a.url} class="article-card">
+        <h2>{a.title}</h2>
+        <p>{a.desc}</p>
+      </a>
+    ))}
+  </div>
+</BaseLayout>
+
+<style>
+  h1 { font-size: 2rem; margin-bottom: 0.5rem; }
+  .category-desc { color: var(--color-text-muted); margin-bottom: 2rem; font-size: 1.05rem; }
+  .articles-list { display: flex; flex-direction: column; gap: 1rem; }
+  .article-card { border: 1px solid #e8e8e8; border-radius: 10px; padding: 1.2rem 1.5rem; text-decoration: none; color: var(--color-text); transition: border-color 0.2s; }
+  .article-card:hover { border-color: var(--color-primary); text-decoration: none; }
+  .article-card h2 { font-size: 1.2rem; margin-bottom: 0.3rem; }
+  .article-card p { font-size: 0.9rem; color: var(--color-text-muted); }
+</style>

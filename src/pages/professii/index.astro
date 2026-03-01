@@ -1,0 +1,34 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = 'Профессии будущего — IT без опыта, новые карьеры | VibeLab';
+const description = 'Вайб-кодер — новая IT-профессия без кода. Как войти в IT без опыта, сколько зарабатывают, с чего начать в 2026.';
+
+const articles = [
+  { title: 'Вайб-кодер — новая IT-профессия без кода', url: '/professii/vibecoder-novaya-professiya/', desc: 'Кто это, сколько зарабатывает и как начать в 2026 — полный гайд по новой профессии.' },
+];
+---
+
+<BaseLayout title={title} description={description}>
+  <h1>Профессии будущего</h1>
+  <p class="category-desc">Новые IT-профессии без кода, вайб-кодер как карьера, истории переквалификации, зарплаты и перспективы в 2026.</p>
+
+  <div class="articles-list">
+    {articles.map(a => (
+      <a href={a.url} class="article-card">
+        <h2>{a.title}</h2>
+        <p>{a.desc}</p>
+      </a>
+    ))}
+  </div>
+</BaseLayout>
+
+<style>
+  h1 { font-size: 2rem; margin-bottom: 0.5rem; }
+  .category-desc { color: var(--color-text-muted); margin-bottom: 2rem; font-size: 1.05rem; }
+  .articles-list { display: flex; flex-direction: column; gap: 1rem; }
+  .article-card { border: 1px solid #e8e8e8; border-radius: 10px; padding: 1.2rem 1.5rem; text-decoration: none; color: var(--color-text); transition: border-color 0.2s; }
+  .article-card:hover { border-color: var(--color-primary); text-decoration: none; }
+  .article-card h2 { font-size: 1.2rem; margin-bottom: 0.3rem; }
+  .article-card p { font-size: 0.9rem; color: var(--color-text-muted); }
+</style>

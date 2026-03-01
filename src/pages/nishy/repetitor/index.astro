@@ -1,0 +1,33 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+const title = 'Вайб-кодинг для репетиторов — платформы, расписание, оплата | VibeLab';
+const description = 'Создавайте свои платформы для онлайн-уроков с расписанием, обработкой платежей и домашними заданиями. Всё без разработчика.';
+const articles = [
+  {
+    title: 'Как репетитору создать свою платформу для онлайн-уроков',
+    url: '/nishy/repetitor/platforma-dlya-urokov/',
+    desc: 'С расписанием, оплатой и домашними заданиями.'
+  }
+];
+---
+<BaseLayout title={title} description={description}>
+  <h1>Вайб-кодинг для репетиторов</h1>
+  <p class="category-desc">Создавайте собственные платформы для проведения онлайн-уроков. Управляйте расписанием, обрабатывайте платежи и организуйте домашние задания.</p>
+  <div class="articles-list">
+    {articles.map(a => (
+      <a href={a.url} class="article-card">
+        <h2>{a.title}</h2>
+        <p>{a.desc}</p>
+      </a>
+    ))}
+  </div>
+</BaseLayout>
+<style>
+  h1 { font-size: 2rem; margin-bottom: 0.5rem; }
+  .category-desc { color: var(--color-text-muted); margin-bottom: 2rem; font-size: 1.05rem; }
+  .articles-list { display: flex; flex-direction: column; gap: 1rem; }
+  .article-card { border: 1px solid #e8e8e8; border-radius: 10px; padding: 1.2rem 1.5rem; text-decoration: none; color: var(--color-text); transition: border-color 0.2s; }
+  .article-card:hover { border-color: var(--color-primary); text-decoration: none; }
+  .article-card h2 { font-size: 1.2rem; margin-bottom: 0.3rem; }
+  .article-card p { font-size: 0.9rem; color: var(--color-text-muted); }
+</style>
